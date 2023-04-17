@@ -1,4 +1,4 @@
-import { AppLayout } from '@/common/app-layout'
+import { AppLayout } from '@/common/components/app-layout'
 import { HomeContainer } from '@/containers/home'
 
 export default function HomePage() {

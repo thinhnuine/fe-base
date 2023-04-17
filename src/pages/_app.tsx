@@ -22,9 +22,12 @@ const store = createStore()
 
 export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page)
+
   return (
     <Provider store={store}>
-      <ConfigProvider locale={jaJP}>{getLayout(<Component {...pageProps} />)}</ConfigProvider>
+      <ConfigProvider theme={{ hashed: false }} locale={jaJP}>
+        {getLayout(<Component {...pageProps} />)}
+      </ConfigProvider>
     </Provider>
   )
 }
