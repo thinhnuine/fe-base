@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import '@/styles/font.css'
 
+import { StyleProvider } from '@ant-design/cssinjs'
 import { ConfigProvider } from 'antd'
 import jaJP from 'antd/locale/ja_JP'
 import { createStore, Provider } from 'jotai'
@@ -25,8 +26,8 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <Provider store={store}>
-      <ConfigProvider theme={{ hashed: false }} locale={jaJP}>
-        {getLayout(<Component {...pageProps} />)}
+      <ConfigProvider locale={jaJP}>
+        <StyleProvider hashPriority="high">{getLayout(<Component {...pageProps} />)}</StyleProvider>
       </ConfigProvider>
     </Provider>
   )

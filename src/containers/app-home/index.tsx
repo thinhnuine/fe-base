@@ -1,5 +1,5 @@
 import React from 'react'
-export const HomeContainer = () => {
+export const AppHomeContainer = () => {
   return (
     <>
       <p>long content</p>

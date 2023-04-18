@@ -31,24 +31,17 @@ const items: MenuProps['items'] = [
   label: `nav ${index + 1}`,
 }))
 
-export const SiderLayout = () => {
+export const AdminSider = () => {
   const [collapsed, setCollapsed] = useAtom(collapseSiderAtom)
 
   return (
     <Sider
-      style={{
-        overflow: 'auto',
-        height: '100vh',
-        position: 'fixed',
-        left: 0,
-        top: 0,
-        bottom: 0,
-      }}
+      className="overflow-auto h-[100vh] fixed left-0 top-0 bottom-0"
       collapsible
       collapsed={collapsed}
       onCollapse={(value) => setCollapsed(value)}
     >
-      <div style={{ height: 32, margin: 16, background: 'rgba(255, 255, 255, 0.2)' }} />
+      <div className="h-8 m-4 bg-[#ffffff33]" />
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
     </Sider>
   )
