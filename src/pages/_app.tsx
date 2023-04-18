@@ -8,6 +8,7 @@ import { createStore, Provider } from 'jotai'
 import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import Router from 'next/router'
+import { appWithTranslation } from 'next-i18next'
 import NProgress from 'nprogress'
 import { ReactElement, ReactNode } from 'react'
 
@@ -21,7 +22,7 @@ type AppPropsWithLayout = AppProps & {
 
 const store = createStore()
 
-export default function App({ Component, pageProps }: AppPropsWithLayout) {
+function App({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
@@ -32,6 +33,8 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
     </Provider>
   )
 }
+
+export default appWithTranslation(App)
 
 NProgress.configure({ showSpinner: false })
 Router.events.on('routeChangeStart', () => NProgress.start())

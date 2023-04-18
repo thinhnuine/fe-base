@@ -1,0 +1,10 @@
+{
+  "heading": "Login",
+  "username": "Username",
+  "password": "Password",
+  "rememberMe": "Remember me",
+  "forgotPassword": "Forgot password",
+  "login": "Login",
+  "or": "or",
+  "registerNow": "register now"
+}

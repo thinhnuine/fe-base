@@ -1,36 +1,37 @@
 import { Button, Checkbox, Form, Input, Typography } from 'antd'
 const { Title } = Typography
+import { useTranslation } from 'next-i18next'
 export const LoginContainer = () => {
-  const onFinish = (values: any) => {
-    console.log('Success:', values)
-  }
+  const { t } = useTranslation('auth/login')
+
+  const onFinish = () => {}
 
   return (
     <>
-      <Title className="text-center">Login</Title>
+      <Title className="text-center">{t('heading')}</Title>
       <Form className="login-form mt-5" size="large" onFinish={onFinish} layout="vertical">
-        <Form.Item label="Username">
+        <Form.Item label={t('username')}>
           <Input placeholder="input placeholder" />
         </Form.Item>
 
-        <Form.Item label="Password">
+        <Form.Item label={t('password')}>
           <Input.Password placeholder="input placeholder" />
         </Form.Item>
         <Form.Item>
           <Form.Item name="remember" valuePropName="checked" noStyle>
-            <Checkbox>Remember me</Checkbox>
+            <Checkbox>{t('rememberMe')}</Checkbox>
           </Form.Item>
 
           <a className="login-form-forgot float-right" href="">
-            Forgot password
+            {t('forgotPassword')}
           </a>
         </Form.Item>
 
         <Form.Item>
           <Button type="primary" htmlType="submit" className="login-form-button w-full">
-            Log in
+            {t('login')}
           </Button>
-          Or <a href="">register now!</a>
+          {t('or')} <a href="">{t('registerNow')}</a>
         </Form.Item>
       </Form>
     </>
