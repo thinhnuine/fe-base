@@ -1,10 +1,10 @@
-import { AppLayout } from '@/common/app-layout'
-import { HomeContainer } from '@/containers/home'
+import { AppLayout } from '@/common/layouts/app-layout'
+import { AppHomeContainer } from '@/containers/app-home'
 
-export default function HomePage() {
-  return <HomeContainer />
+export default function AppHomePage() {
+  return <AppHomeContainer />
 }
 
-HomePage.getLayout = (page: React.ReactElement) => {
+AppHomePage.getLayout = (page: React.ReactElement) => {
   return <AppLayout>{page}</AppLayout>
 }
